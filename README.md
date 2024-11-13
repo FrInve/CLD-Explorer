@@ -1,5 +1,5 @@
 # CLD-Explorer
-So far il workflow è il seguente:
+So far il workflow a livello generale è il seguente(nei prossimi giorni lo riscrvio meglio e più dettagliato cosi da renderlo completo e comprensibile  tutti):
 - Creazione grafo a mano con Kumu
 - Estrazione file JSON come esempio caricato
 - run dello script per creazione grafo in Neo4j, specificando il gruppo per ogni cld

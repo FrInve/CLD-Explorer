@@ -1,0 +1,4 @@
+// relationships qeury
+
+MATCH ( a { group : ‘... ’ }) -[ r ] - >( b { group : ‘... ’ })
+ RETURN r . numeric_id as relationshipID , type ( r ) as type

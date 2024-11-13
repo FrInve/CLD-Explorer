@@ -1,0 +1,3 @@
+//nodes qeury
+MATCH ( n { group : ‘... ’ })
+RETURN n . id_custom as node_name , n . group , n . x as pos_x , n . y as pos_y

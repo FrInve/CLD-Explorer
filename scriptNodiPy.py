@@ -16,7 +16,6 @@ df = df[['cldID'] + [col for col in df.columns if col != 'cldID']]
 output_path = r"C:\Users\danyl\OneDrive\Desktop\outputNodes.csv"
 df.to_csv(output_path, index=False)
 
-
 #connessione to mysql
 conn = mysql.connector.connect(
     host='localhost',

@@ -9,7 +9,7 @@ df = pd.read_csv(csv_path)
 df = df.replace('"', '', regex=True)
 
 #agiunge la colonna 'cldID' con un valore costante
-df['cldID'] = 1  # Sostituisci 1 per covid,2 fashion, 3 hotel
+df['cldID'] = 2  #sostituisci 1 per covid,2 fashion, 3 hotel
 
 #rinominare le colonne (Scelte random, senza una motivazione precisa)
 df.rename(columns={'relationship_type': 'type', 'ID': 'relationshipID'}, inplace=True)

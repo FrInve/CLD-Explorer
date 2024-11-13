@@ -17,7 +17,7 @@ df['loop_path'] = df['loop_path'].replace(r'[\[\]]', '', regex=True)
 df.rename(columns={'pathState': 'state', 'path_sequence': 'loop_path'}, inplace=True)
 
 
-df['cldID'] = 1  
+df['cldID'] = 2  
 
 #aggiunge colonna loopID con valori icnrementali
 df['loopID'] = range(1, len(df) + 1)

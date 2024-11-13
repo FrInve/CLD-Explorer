@@ -19,7 +19,7 @@ df = df.replace('"', '', regex=True)
 df['route'] = df['route'].replace(r'[\[\]]', '', regex=True)
 
 #aggiungere la colonna cldID con un valore costante
-df['cldID'] = 1 
+df['cldID'] = 2
 
 #aggiungere una colonna routeID con valori incrementali
 df['routeID'] = range(1, len(df) + 1)

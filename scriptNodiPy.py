@@ -8,7 +8,7 @@ df = pd.read_csv(csv_path)
 df = df.replace('"', '', regex=True)
 
 # aggiunge colonna cldID, ogni cld ha un id numerico diverso
-df['cldID'] = 3  
+df['cldID'] = 2
 #ordina colonne del df cosi da avere cdlID come prima
 df = df[['cldID'] + [col for col in df.columns if col != 'cldID']]
 

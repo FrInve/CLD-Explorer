@@ -38,7 +38,7 @@ maps = data['maps'][0]['elements']  #coordinate dei nodi
 connections = data['connections']
 
 #gruppo perché per ora neo4j ha bisogno per ora di una label per ogni cld
-group = input("Inserire il gruppo del CLD: ")
+group = input("gruppo del CLD: ")
 
 #dizionario per tenere traccia degli id dei nodi creati
 node_dict = {}
@@ -58,7 +58,7 @@ with driver.session() as session:
                 break
         
         #esegue il comando per creare il nodo in Neo4j
-        session.write_transaction(create_node, id_custom.upper(), node_id_counter, id_custom, group, x, y)
+        session.execute_write(create_node, id_custom.upper(), node_id_counter, id_custom, group, x, y)
         
         #salva il nodo creato nel dizionario
         node_dict[elem_id] = id_custom
@@ -84,7 +84,7 @@ with driver.session() as session:
             delay = 'yes' if connection.get('delayed') else 'no'
             
             #esegue il comando per creare la relazione in Neo4j
-            session.write_transaction(create_relationship, from_node, to_node, relation_type, relationship_id_counter, delay)
+            session.execute_write(create_relationship, from_node, to_node, relation_type, relationship_id_counter, delay)
             relationship_id_counter += 1
 
 driver.close()

@@ -1,0 +1,46 @@
+services:
+  neo4j:
+    image: "neo4j:5.25.1"
+#    ports:
+#      - "7474:7474"
+#      - "7687:7687"
+    expose:
+       - 7474
+       - 7687
+    environment:
+      - NEO4J_AUTH=neo4j/password
+      - NEO4J_PLUGINS=["apoc"]
+    restart: always
+  mysql:
+    image: mysql:8.0.36-debian
+    environment:
+      - MYSQL_ROOT_PASSWORD=3utoeZVN!
+    volumes:
+      - ./mysql-data:/var/lib/mysql
+      - ./my.cnf:/etc/mysql/conf.d/my.cnf
+      - ./mysql-entrypoint:/docker-entrypoint-initdb.d
+#    ports:
+#      - "3306:3306"
+    expose:
+      - 3306
+    restart: always
+  
+  cld-explorer:
+    build:
+      context: ./cld-explorer/
+      dockerfile: Dockerfile
+    environment:
+      - STREAMLIT_BROWSER_SERVER_ADDRESS=http://geco.deib.polimi.it/cld-explorer
+    ports:
+      - "28501:8501"
+      - "28503:5678"  # Debug port
+    restart: always
+
+  loopy:
+    build:
+      context: ./loopy/
+      dockerfile: Dockerfile
+    ports:
+      - "28502:80"
+    restart: always
+      

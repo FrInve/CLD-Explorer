@@ -9,30 +9,34 @@ st.title("About CLD Explorer")
 # About section
 st.header("About")
 
-st.markdown(
+col1, col2 = st.columns([0.3, 0.7])
+
+with col1:
+    st.image("./assets/deib_logo.png", use_column_width=True)
+
+with col2:
+    st.markdown(
+        """
+    The **CLD Explorer** application was designed and developed by **Anna Bernasconi**, **Stefano Ceri**, **Francesco Invernici**, **Chiara Leonardi**, and **Laura Daniela Maftei**.
+
+    **Department of Electronics, Information, and Bioengineering (DEIB)**  
+    Politecnico di Milano  
+    Via Ponzio 34/5 Milano  
+    20133 Milano  
+    Italy
+
     """
-The **CLD Explorer** application was designed and developed by **Francesco Invernici**, **Prof. Anna Bernasconi**, and **Prof. Stefano Ceri**.
-
-**Department of Electronics, Information, and Bioengineering (DEIB)**  
-Politecnico di Milano  
-Via Ponzio 34/5 Milano  
-20133 Milano  
-Italy
-
-The authors would like to acknowledge with thanks **Luca Minotti** for implementing the front-end of the GRAPH-SEARCH web application.
-"""
-)
+    )
 
 # Citation section
 st.header("Citation")
 
 st.markdown(
     """
-Our paper is in preparation. In the meanwhile, if you use **GRAPH-SEARCH**, please cite it as follows:
+Our paper is in preparation. In the meanwhile, if you use **CLD Explorer**, please cite it as follows:
 
-Francesco Invernici, Anna Bernasconi, and Stefano Ceri. 2023.  
-"GRAPH-SEARCH: Searching COVID-19 clinical research using graph queries".  
-http://gmql.eu/graph-search
+Anna Bernasconi, Stefano Ceri, Francesco Invernici, Chiara Leonardi, and Laura Daniela Maftei. 2025.  
+"CLD-Explorer: toward a tool for Causal Loop Diagrams analytics".  
 """
 )
 
@@ -56,6 +60,15 @@ st.markdown(
     h2 {
         margin-top: 2rem;
         margin-bottom: 1rem;
+    }
+    
+    /* Style for the image container */
+    div[data-testid="column"]:first-child img {
+        background-color: #f8f9fa !important;
+        padding: 20px !important;
+        border-radius: 10px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
     }
 </style>
 """,

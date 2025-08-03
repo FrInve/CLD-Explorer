@@ -12,6 +12,12 @@ st.title("Design your Causal Loop Diagram")
 if "session_id" not in st.session_state:
     st.session_state.session_id = uuid4()
 
+st.write(
+    """
+         On this page, you can exploit the Loopy design tool to draw variables (named circles) and causality links (directed arrows with a polarity). Once finalized, press "back to top" or the hand-shaped cursor. You can now load your diagram to the CLD-Explorer environment by clicking on "save as link" and pasting it on the bar below. Then, you can "Load"!
+"""
+)
+
 components.iframe(
     # "https://ncase.me/loopy/v1.1/?data=[[],[],[],2%5D", height=768, width=1280
     "https://geco.deib.polimi.it/loopy/?data=[[],[],[],2%5D",

@@ -13,10 +13,11 @@ RUN apt-get update && apt-get install -y \
 COPY ./requirements.txt /app/
 RUN pip3 install -r requirements.txt
 
+ADD ./.streamlit /root/
 ADD ./ /app/
 
 EXPOSE 8501
 
 HEALTHCHECK --interval=10s --timeout=5s --start-period=15s CMD curl --fail localhost:8501/_stcore/health
 
-ENTRYPOINT ["streamlit", "run", "Causal_Loops_Explorer.py", "--server.port=8501", "--server.address=0.0.0.0"]
+ENTRYPOINT ["streamlit", "run", "Welcome_Page.py", "--server.port=8501", "--server.address=0.0.0.0"]

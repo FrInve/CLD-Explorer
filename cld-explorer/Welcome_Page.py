@@ -58,7 +58,7 @@ def img_to_base64(file_path):
         return base64.b64encode(img_file.read()).decode("utf-8")
 
 
-st.title("Causal Loops Explorer")
+st.title("Causal Loop Diagrams Explorer")
 st.header("Introduction to the Platform")
 st.write(
     """

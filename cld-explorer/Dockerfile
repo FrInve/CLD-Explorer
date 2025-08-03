@@ -13,8 +13,8 @@ RUN apt-get update && apt-get install -y \
 COPY ./requirements.txt /app/
 RUN pip3 install -r requirements.txt
 
-ADD ./.streamlit /root/
 ADD ./ /app/
+ADD ./.streamlit /root/
 
 EXPOSE 8501
 

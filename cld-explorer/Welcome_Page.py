@@ -1,11 +1,14 @@
-import debugpy
-
-debugpy.listen(("0.0.0.0", 5678))  # Open debug port
-print("✅ Debugger is listening on port 5678")
-# debugpy.wait_for_client()  # Optional: wait for VSCode debugger to attach
-
 import base64
 import os
+
+import debugpy
+
+# check if variable DEBUG is set to True
+DEBUG = os.getenv("DEBUG", "False").lower() == "true"
+if DEBUG:
+    debugpy.listen(("0.0.0.0", 5678))  # Open debug port
+    print("✅ Debugger is listening on port 5678")
+    # debugpy.wait_for_client()  # Optional: wait for VSCode debugger to attach
 import shutil
 
 import cairosvg

@@ -31,6 +31,7 @@ services:
       dockerfile: Dockerfile
     environment:
       - STREAMLIT_BROWSER_SERVER_ADDRESS=http://geco.deib.polimi.it/cld-explorer
+      - DEBUG=False
     ports:
       - "28501:8501"
       - "28503:5678"  # Debug port

@@ -238,7 +238,7 @@ def show_main_carousel(side_by_side=False):
         )
 
         # pulsante salva immagine corrente
-        if st.button("Save this image", key=save_key):
+        if st.button("Save this Route into report", key=save_key):
             # controlla se l'immagine è già stata salvata
             if "saved_route_images" not in st.session_state:
                 st.session_state["saved_route_images"] = []

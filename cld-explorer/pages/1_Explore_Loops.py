@@ -216,7 +216,7 @@ def show_main_carousel(
         )
 
         # pulsante per salvare l'immagine corrente
-        if st.button("Save this image", key=save_key):
+        if st.button("Save this Loop into report", key=save_key):
 
             # controlla se la lista 'loop_saved_images' esiste in st.session_state. Se non esiste, la crea come una lista vuota.
             if "loop_saved_images" not in st.session_state:
